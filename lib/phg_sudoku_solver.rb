@@ -43,6 +43,9 @@ class Sudoku
         }
       }
     end
+    unless self.validate_sudoku
+      raise Exception.new('Sudoku entered appears to be invalid.')
+    end
   end
 
   def get_cells
@@ -93,33 +96,33 @@ class Sudoku
           find_col_implied_values()
           find_matrix_implied_values()
         else
-          return nil
+          return nil, @total_iterations
         end
       rescue Exception => error
         print_debug '\nValidation Error: %s\n' % error
         @solved_cell_count=count_fixed_cells()
-        return nil
+        return nil, @total_iterations
       end
 
+      if @total_iterations > @max_iterations
+        print_debug 'Total Iterations... %s\n' % @total_iterations
+        print_debug 'This is just taking too long\n'
+        raise Exception.new('Solution taking too long!\n\n')
+      end
 
       if @solved_cell_count==count_fixed_cells()
         no_progress_count+=1
         if no_progress_count>9
           print_debug ('We''re not making progress here!')
-          if @total_iterations > @max_iterations
-            print 'Total Iterations... %s\n' % @total_iterations
-            print 'This is just taking too long\n'
-            raise Exception.new('Solution taking too long!\n\n')
-          end
           solution = recurse()
-          return solution
+          return solution, @total_iterations
         end
       else
         no_progress_count=0
         @solved_cell_count=count_fixed_cells()
       end
     end
-    self
+    return self, @total_iterations
   end
 
   def count_fixed_cells
@@ -316,7 +319,8 @@ class Sudoku
               print_debug '\nStarting recursion with (%s,%s) set to %s\n' % [r, c, recurse.get_possible_values(r, c)[j]]
               recurse.set_fixed_value(r, c, recurse.get_possible_values(r, c)[j])
               print_debug('Recursion starting...')
-              recurse = recurse.solve
+              recurse, iterations = recurse.solve
+              @total_iterations = @total_iterations + iterations
               if recurse!=nil
                 return recurse
               else
@@ -341,6 +345,7 @@ class Sudoku
     }
     s.set_max_iterations(@max_iterations)
     s.set_total_iterations(@total_iterations)
+    s.set_debug(@debug)
     s
   end
 
@@ -361,7 +366,6 @@ class Sudoku
         }
       }
     rescue Exception => error
-      print_debug '\nValidation Error: %s\n' % error
       results = false
     end
     results
@@ -377,7 +381,7 @@ class Sudoku
         end
       }
       if found_count>1
-        raise Exception.new('Row invalid.  Canceling')
+        raise Exception.new('Row invalid %s.  Canceling' % r)
       end
     }
     true

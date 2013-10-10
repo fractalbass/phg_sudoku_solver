@@ -19,31 +19,32 @@ class PhgSudokuSolverTest < Test::Unit::TestCase
 
   # Cell initialize
   def test_initialize_sudoku
-    a = ['123456789',
-         '123456789',
-         '123456789',
-         '123456789',
-         '123456789',
-         '123456789',
-         '123456789',
-         '123456789',
-         '123456789']
+    a = ["5xx4x67xx",
+          "xxx5xx9xx",
+          "2xxx17x4x",
+          "xxx72xx1x",
+          "9xxxxxxx8",
+          "x7xx68xxx",
+          "x3x27xxx5",
+          "xx4xx3xxx",
+          "xx26x4xx3"]
 
     s = Sudoku.new(a)
-    #print "\n\n"
-    #for row in (0..8)
-    #  for col in (0..8)
-    #    print s.getFixedValue(row,col)
-    #  end
-    #  print "\n"
-    #end
-    #print "\n\n"
 
-    self.assert(s.get_fixed_value(0,0)==1, message="Incorrect value returned")
-    self.assert(s.get_fixed_value(0,8)==9, message="Incorrect value returned")
-    self.assert(s.get_fixed_value(8,0)==1, message="Incorrect value returned")
-    self.assert(s.get_fixed_value(8,8)==9, message="Incorrect value returned")
-    self.assert(s.get_fixed_value(4,5)==6, message="Incorrect value returned")
+    self.assert(s.get_fixed_value(0,0)==5, message="Incorrect value returned")
+    self.assert(s.get_fixed_value(0,6)==7, message="Incorrect value returned")
+    self.assert(s.get_fixed_value(8,2)==2, message="Incorrect value returned")
+    self.assert(s.get_fixed_value(8,8)==3, message="Incorrect value returned")
+    self.assert(s.get_fixed_value(5,4)==6, message="Incorrect value returned")
+  end
+
+  def test_initialize_incomplete_sudoku
+    a = ['123123123']
+
+    self.assert_raise(Exception){
+    s = Sudoku.new(a)
+    }
+
   end
 
   def test_initialize_sparse_sudoku
@@ -139,20 +140,20 @@ class PhgSudokuSolverTest < Test::Unit::TestCase
           "471368259", #5
           "839271465", #6
           "1 49 38 7", #7
-          "752684192"] #8
+          "752684193"] #8
 
     s = Sudoku.new(a)
-    s.set_possible_values(1,1,[4])
-    s.set_possible_values(1,4,[3])
-    s.set_possible_values(1,7,[8])
-    s.set_possible_values(4,1,[2])
-    s.set_possible_values(4,4,[4])
-    s.set_possible_values(4,7,[7])
-    s.set_possible_values(7,1,[6])
-    s.set_possible_values(7,4,[5])
-    s.set_possible_values(7,7,[3])
-
-    s.find_matrix_implied_values()
+    #s.set_possible_values(1,1,[4])
+    #s.set_possible_values(1,4,[3])
+    #s.set_possible_values(1,7,[8])
+    #s.set_possible_values(4,1,[2])
+    #s.set_possible_values(4,4,[4])
+    #s.set_possible_values(4,7,[7])
+    #s.set_possible_values(7,1,[6])
+    #s.set_possible_values(7,4,[5])
+    #s.set_possible_values(7,7,[3])
+    s.compute_possible_values
+    s.find_matrix_implied_values
     self.assert(s.get_fixed_value(1,1)==4, message="Expected fixed value of 4 in (1,1), got %s" % s.get_fixed_value(1,1))
     self.assert(s.get_fixed_value(1,4)==3, message="Expected fixed value of 3 in (1,4), got %s" % s.get_fixed_value(1,4))
     self.assert(s.get_fixed_value(1,7)==8, message="Expected fixed value of 8 in (1,7), got %s" % s.get_fixed_value(1,7))
@@ -161,7 +162,7 @@ class PhgSudokuSolverTest < Test::Unit::TestCase
     self.assert(s.get_fixed_value(4,7)==7, message="Expected fixed value of 7 in (4,7), got %s" % s.get_fixed_value(4,7))
     self.assert(s.get_fixed_value(7,1)==6, message="Expected fixed value of 6 in (7,1), got %s" % s.get_fixed_value(7,1))
     self.assert(s.get_fixed_value(7,4)==5, message="Expected fixed value of 5 in (7,4), got %s" % s.get_fixed_value(7,4))
-    self.assert(s.get_fixed_value(7,7)==3, message="Expected fixed value of 2 in (7,7), got %s" % s.get_fixed_value(7,7))
+    self.assert(s.get_fixed_value(7,7)==2, message="Expected fixed value of 2 in (7,7), got %s" % s.get_fixed_value(7,7))
   end
 
   def test_row_ok
@@ -248,7 +249,7 @@ class PhgSudokuSolverTest < Test::Unit::TestCase
     self.assert(not(s.check_matrix_value(4,4,5)), message="Matrix Ok and should not have been.")
   end
 
-  def test_comput_possible_values_1
+  def test_compute_possible_values_1
     a = [ "51849673x",
           "647532981",
           "293817546",
@@ -264,7 +265,7 @@ class PhgSudokuSolverTest < Test::Unit::TestCase
 
   end
 
-  def test_compute_possible_values_1
+  def test_compute_possible_values_2
           #012345678
     a = [ "1!xxxxxxx",#0
           "x2xx!xxxx",#1
@@ -311,29 +312,6 @@ class PhgSudokuSolverTest < Test::Unit::TestCase
     self.assert(s.validate_matrix(4,4))
   end
 
-  def test_invalid_raises_exception
-    a = [ "518496733",
-          "647532981",
-          "293817546",
-          "385729614",
-          "926125378",
-          "471368259",
-          "839271465",
-          "164953827",
-          "752684193"]
-    s=Sudoku.new(a)
-
-    self.assert_raise(Exception) {
-      s.validate_row(0) }
-
-    self.assert_raise(Exception) {
-      s.validate_column(8) }
-
-    self.assert_raise(Exception) {
-      s.validate_matrix(4,4)
-    }
-  end
-
   def test_validate_sudoku
     a = [ "518496732",
           "647532981",
@@ -360,8 +338,9 @@ class PhgSudokuSolverTest < Test::Unit::TestCase
           "839271465",
           "164953827",
           "752684193"]
-    s=Sudoku.new(a)
-      self.assert(not(s.validate_sudoku), "A perfectly good sudoku fails to validate.  Boo.")
+    self.assert_raise(Exception){
+     s=Sudoku.new(a)
+    }
 
   end
 
@@ -379,8 +358,7 @@ class PhgSudokuSolverTest < Test::Unit::TestCase
     s = Sudoku.new(a)
     s.set_debug(true)
     s.set_debug(false)
-    solved = s.solve()
-    solved.set_debug(true)
+    solved, total_iterations = s.solve()
     self.assert(solved.validate_sudoku, "Solved sudoku is invalid!!!")
     self.assert(solved.count_fixed_cells==81, "Sudoku is incomplete!!!")
 
