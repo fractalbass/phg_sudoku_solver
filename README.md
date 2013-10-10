@@ -3,9 +3,13 @@
 A simple little gem for solving sudoku puzzles.
 
 Miles Porter
+
 Senior Software Consultant
+
 Painted Harmony Group, Inc.
+
 mporter(AT)paintedharmony(DOT)com
+
 
 # Background:
 I first started doing Sudoku puzzles a few years ago while on a 3 hour plane flight. I was hooked. Eventually, I came
