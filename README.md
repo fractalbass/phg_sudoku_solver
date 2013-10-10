@@ -1,14 +1,11 @@
 # PhgSudokuSolver
 
-A simple little gem for solving sudoku puzzles.
+##A simple little gem for solving sudoku puzzles.##
 
-Miles Porter
-
-Senior Software Consultant
-
-Painted Harmony Group, Inc.
-
-mporter(AT)paintedharmony(DOT)com
+**Miles Porter**<br>
+**Senior Software Consultant**<br>
+**Painted Harmony Group, Inc.**<br>
+**mporter@paintedharmony.com**<br>
 
 
 # Background:
@@ -53,67 +50,57 @@ To get the results of the solved sudoku, you can
 
 Example from irb...
 
-```
-± irb
-1.9.3p194 :001 > require 'phg_sudoku_solver'
- => true
-1.9.3p194 :002 >
-1.9.3p194 :003 >   a = [ "5xx4x67xx", "xxx5xx9xx", "2xxx17x4x", "xxx72xx1x", "9xxxxxxx8", "x7xx68xxx", "x3x27xxx5", "xx4xx3xxx","xx26x4xx3"]
- => ["5xx4x67xx", "xxx5xx9xx", "2xxx17x4x", "xxx72xx1x", "9xxxxxxx8", "x7xx68xxx", "x3x27xxx5", "xx4xx3xxx", "xx26x4xx3"]
-1.9.3p194 :004 >
-1.9.3p194 :005 >   s = Sudoku.new(a)
+<pre>
+require 'phg_sudoku_solver'
+a = [  "5xx4x67xx",
+       "xxx5xx9xx",
+       "2xxx17x4x",
+       "xxx72xx1x",
+       "9xxxxxxx8",
+       "x7xx68xxx",
+       "x3x27xxx5",
+       "xx4xx3xxx",
+       "xx26x4xx3"]
 
-[blah blah blah]
+s = Sudoku.new(a)
 
-1.9.3p194 :010 > x = s.solve
-
-[blah blah blah]
+x = s.solve
 
 x.dump_known_cells_str
- => "\\n  5   1   8 |   4   9   6 |   7   3   2 \\n
-          6   4   7 |   5   3   2 |   9   8   1 \\n
-          2   9   3 |   8   1   7 |   5   4   6 \\n
-          ----------------------------------------\\n
-          3   8   5 |   7   2   9 |   6   1   4 \\n
-          9   2   6 |   1   4   5 |   3   7   8 \\n
-          4   7   1 |   3   6   8 |   2   5   9 \\n
-          ----------------------------------------\\n
-          8   3   9 |   2   7   1 |   4   6   5 \\n
-          1   6   4 |   9   5   3 |   8   2   7 \\n
-          7   5   2 |   6   8   4 |   1   9   3 \\n"
-```
+
+  5   1   8 |   4   9   6 |   7   3   2
+  6   4   7 |   5   3   2 |   9   8   1
+  2   9   3 |   8   1   7 |   5   4   6
+ ----------------------------------------
+  3   8   5 |   7   2   9 |   6   1   4
+  9   2   6 |   1   4   5 |   3   7   8
+  4   7   1 |   3   6   8 |   2   5   9
+ ----------------------------------------
+  8   3   9 |   2   7   1 |   4   6   5
+  1   6   4 |   9   5   3 |   8   2   7
+  7   5   2 |   6   8   4 |   1   9   3
+</pre>
 Note:  The display has been cleaned up a bit above.
 
 ## WHEN SOMETHING GOES WRONG...  AND SOMETHING ALWAYS GOES WRONG...
 
 1.  If the sudoku entered is invalid, the solve method will return an error.
 
-```
-1.9.3p194 :015 > a = ['123123123']
-  => ["123123123"]
- 1.9.3p194 :016 > s = Sudoku.new(a)
- Exception: Sudoku entered appears to be invalid.
- 	from /Users/miles_r_porter/.rvm/gems/ruby-1.9.3-p194/gems/phg_sudoku_solver-0.0.2/lib/phg_sudoku_solver.rb:47:in `initialize'
- 	from (irb):16:in `new'
- 	from (irb):16
- 	from /Users/miles_r_porter/.rvm/rubies/ruby-1.9.3-p194/bin/irb:16:in `<main>'
- 1.9.3p194 :017 >
-```
+<pre>
+a = ['123123123']
+s = Sudoku.new(a)
+Exception: Sudoku entered appears to be invalid.
+...
+</pre>
 
 2.  Some sudoku are just to complex for the engine to compute a solution in the given maximum iterations
 
-```
-1.9.3p194 :018 >   a = ["123456789","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx"]
- => ["123456789", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx"]
-1.9.3p194 :019 > s = Sudoku.new(a)
-
-[blah blah blah]
-
-1.9.3p194 :020 > x = s.solve()
-
-1.9.3p194 :012 > x = s.solve
-Exception: Solution taking too long!\n\n
-```
+<pre>
+a = ["123456789","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx"]
+s = Sudoku.new(a)
+x = s.solve
+Exception: Solution taking too long!
+</pre>
 
 
 
@@ -122,6 +109,9 @@ iterations set.  You can set the max iterations like this:
 
 `s.set_max_iterations(500)`
 
+I have created a sample app running on Heroku (that includes a link to source code) that uses the gem...
+
+[Sample App Running On Heroku](http://serene-brook-6810.heroku.com/)
 
 More features will be released at some point.  Enjoy!
 

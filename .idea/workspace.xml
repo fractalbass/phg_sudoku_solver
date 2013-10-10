@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="130158c1-54de-4345-a608-9c01433a4631" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="phg_sudoku_solver.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -16,7 +17,7 @@
     <file path="$PROJECT_DIR$/../../sudoku_solver/rails/sudoku_solver/test/unit/cell_test.rb" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381359851987" ignored="false" />
     <file path="/cell_test.rb" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381359837971" ignored="false" />
     <file path="$PROJECT_DIR$/../../sudoku_solver/rails/sudoku_solver/app/controllers/solver_controller.rb" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381420722046" ignored="false" />
-    <file path="/Dummy.txt" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381422240265" ignored="false" />
+    <file path="/Dummy.txt" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381439954798" ignored="false" />
     <file path="$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/phg_sudoku_solver-0.0.1/lib/phg_sudoku_solver.rb" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381409384228" ignored="false" />
     <file path="/phg_sudoku_solver.rb" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381429149198" ignored="false" />
     <file path="/temp.rb" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381417770566" ignored="false" />
@@ -27,8 +28,9 @@
     <file path="$PROJECT_DIR$/../../sudoku_solver/rails/sudoku_solver/app/views/solver/invalid.html.erb" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381423258249" ignored="false" />
     <file path="$PROJECT_DIR$/../../sudoku_solver/rails/sudoku_solver/app/views/solver/index.html.erb" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381423339621" ignored="false" />
     <file path="/index.html.erb" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381423335932" ignored="false" />
-    <file path="/README.md" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381439620212" ignored="false" />
+    <file path="/README.md" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381440680376" ignored="false" />
     <file path="/fragment.rb" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381426138153" ignored="false" />
+    <file path="/a.rxml" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381439873329" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +53,7 @@
       <file leaf-file-name="phg_sudoku_solver.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/phg_sudoku_solver.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="11" selection-start="2775" selection-end="2786" vertical-scroll-proportion="-20.76923">
+            <state line="118" column="11" selection-start="2775" selection-end="2786" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -87,7 +89,7 @@
       <file leaf-file-name="sudoku_test.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/sudoku_test.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="360" column="28" selection-start="10173" selection-end="10173" vertical-scroll-proportion="-526.1539">
+            <state line="360" column="28" selection-start="10173" selection-end="10173" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -122,8 +124,11 @@
       </file>
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="173" selection-end="173" vertical-scroll-proportion="0.20121951">
+            <state line="0" column="0" selection-start="0" selection-end="1280" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -157,8 +162,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="163" />
-    <option name="y" value="85" />
+    <option name="x" value="58" />
+    <option name="y" value="22" />
     <option name="width" value="2560" />
     <option name="height" value="1414" />
   </component>
@@ -264,12 +269,12 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.sourceCode.Ruby" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -509,18 +514,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="163" y="85" width="2560" height="1414" extended-state="6" />
+    <frame x="58" y="22" width="2560" height="1414" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961932" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25179" sideWeight="0.64388764" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25377885" sideWeight="0.64388764" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18297534" sideWeight="0.53986335" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39939255" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3561124" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3561124" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -644,9 +649,7 @@
     </entry>
     <entry file="file://$USER_HOME$/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems/core_ext/kernel_require.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1544" selection-end="1544" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="54" column="0" selection-start="1544" selection-end="1544" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/cell_test.rb">
@@ -670,13 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phg_sudoku_solver.gemspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="853" selection-end="853" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/minitest/unit.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="789" column="0" selection-start="20304" selection-end="20304" vertical-scroll-proportion="0.0">
@@ -686,21 +682,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/sudoku_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="360" column="28" selection-start="10173" selection-end="10173" vertical-scroll-proportion="-526.1539">
+        <state line="360" column="28" selection-start="10173" selection-end="10173" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/phg_sudoku_solver.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="11" selection-start="2775" selection-end="2786" vertical-scroll-proportion="-20.76923">
+        <state line="118" column="11" selection-start="2775" selection-end="2786" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phg_sudoku_solver.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="853" selection-end="853" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="173" selection-end="173" vertical-scroll-proportion="0.20121951">
+        <state line="0" column="0" selection-start="0" selection-end="1280" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
