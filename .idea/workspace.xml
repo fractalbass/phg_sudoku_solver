@@ -27,7 +27,7 @@
     <file path="$PROJECT_DIR$/../../sudoku_solver/rails/sudoku_solver/app/views/solver/invalid.html.erb" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381423258249" ignored="false" />
     <file path="$PROJECT_DIR$/../../sudoku_solver/rails/sudoku_solver/app/views/solver/index.html.erb" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381423339621" ignored="false" />
     <file path="/index.html.erb" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381423335932" ignored="false" />
-    <file path="/README.md" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381439395636" ignored="false" />
+    <file path="/README.md" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381439620212" ignored="false" />
     <file path="/fragment.rb" changelist="130158c1-54de-4345-a608-9c01433a4631" time="1381426138153" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +123,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="0" selection-start="4521" selection-end="4521" vertical-scroll-proportion="0.7865854">
+            <state line="120" column="0" selection-start="4588" selection-end="4588" vertical-scroll-proportion="0.7621951">
               <folding />
             </state>
           </provider>
@@ -700,7 +700,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="0" selection-start="4521" selection-end="4521" vertical-scroll-proportion="0.7865854">
+        <state line="120" column="0" selection-start="4588" selection-end="4588" vertical-scroll-proportion="0.7621951">
           <folding />
         </state>
       </provider>

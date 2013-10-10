@@ -1,13 +1,14 @@
 # PhgSudokuSolver
 
-Welcome to the PHG Sudoku Solver gem.
+A simple little gem for solving sudoku puzzles.
 
 Miles Porter
 Senior Software Consultant
 Painted Harmony Group, Inc.
 mporter(AT)paintedharmony(DOT)com
 
-"I first started doing Sudoku puzzles a few years ago while on a 3 hour plane flight. I was hooked. Eventually, I came
+# Background:
+I first started doing Sudoku puzzles a few years ago while on a 3 hour plane flight. I was hooked. Eventually, I came
 across a Sudoku that I could not do. I was completely frustrated, and the puzzle that I was working on was printed in a
 weekly newspaper and I didn't want to wait an entire week to see the solution. So, I did what any good software engineer
 would do... I decided to write a program/algorithm to solve the puzzle. At first, I tried the brute-force method of
@@ -33,6 +34,20 @@ Or install it yourself as:
 ## Usage
 
 The following snipit illustrates show to use this gem (taken from tests, mind you.)
+
+
+Create a new Sudoku instance by passing in an array of 9 strings.  Each string needs to be 9 characters.  Any non-
+numeric character (1-9) is considered to be an unsolved cell.  You can use spaces, Xs or whatever you like.
+
+Call the `.solve` method on the sudoku instance that you create.
+
+To get the results of the solved sudoku, you can
+1)  Call the '.dump_known_cells_str' method, which will return a formatted string that represents the solved puzzle.
+2)  Iterate over the '.get_fixed_value(r,c)' method, where r and c represent the row and column.  The data returned
+    will be the value found for that cell.
+
+
+Example from irb...
 
 ```
 ± irb
@@ -63,22 +78,11 @@ x.dump_known_cells_str
           1   6   4 |   9   5   3 |   8   2   7 \\n
           7   5   2 |   6   8   4 |   1   9   3 \\n"
 ```
-        Note:  The display has been cleaned up a bit above.
+Note:  The display has been cleaned up a bit above.
 
-Notes:
-  Create a new Sudoku instance by passing in an array of 9 strings.  Each string needs to be 9 characters.  Any non-
-  numeric character (1-9) is considered to be an unsolved cell.  You can use spaces, Xs or whatever you like.
+## WHEN SOMETHING GOES WRONG...  AND SOMETHING ALWAYS GOES WRONG...
 
-  Call the `.solve` method on the sudoku instance that you create.
-
-  To get the results of the solved sudoku, you can
-  1)  Call the '.dump_known_cells_str' method, which will return a formatted string that represents the solved puzzle.
-  2)  Iterate over the '.get_fixed_value(r,c)' method, where r and c represent the row and column.  The data returned
-      will be the value found for that cell.
-
-  WHEN SOMETHING GOES WRONG...  AND SOMETHING ALWAYS GOES WRONG...
-
-  1.  If the sudoku entered is invalid, the solve method will return an error.
+1.  If the sudoku entered is invalid, the solve method will return an error.
 
 ```
 1.9.3p194 :015 > a = ['123123123']
@@ -92,30 +96,30 @@ Notes:
  1.9.3p194 :017 >
 ```
 
-  2.  Some sudoku are just to complex for the engine to compute a solution in the given maximum iterations
+2.  Some sudoku are just to complex for the engine to compute a solution in the given maximum iterations
 
-  ```
-  1.9.3p194 :018 >   a = ["123456789","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx"]
-   => ["123456789", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx"]
-  1.9.3p194 :019 > s = Sudoku.new(a)
+```
+1.9.3p194 :018 >   a = ["123456789","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx"]
+ => ["123456789", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx"]
+1.9.3p194 :019 > s = Sudoku.new(a)
 
-  [blah blah blah]
+[blah blah blah]
 
-  1.9.3p194 :020 > x = s.solve()
+1.9.3p194 :020 > x = s.solve()
 
-  1.9.3p194 :012 > x = s.solve
-  Exception: Solution taking too long!\n\n
-  ```
-
-  Note:  The number of iterations are checked after each recursion, so there total iterations may exceed the max
-  iterations set.
-
-  Oh...  and you can set the max iterations like this:
-
-  `s.set_max_iterations(500)`
+1.9.3p194 :012 > x = s.solve
+Exception: Solution taking too long!\n\n
+```
 
 
-  More features will be released at some point.  Enjoy!
+
+Note:  The number of iterations are checked after each recursion, so there total iterations may exceed the max
+iterations set.  You can set the max iterations like this:
+
+`s.set_max_iterations(500)`
+
+
+More features will be released at some point.  Enjoy!
 
 
 ## Contributing
