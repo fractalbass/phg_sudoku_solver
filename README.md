@@ -34,7 +34,8 @@ Or install it yourself as:
 
 The following snipit illustrates show to use this gem (taken from tests, mind you.)
 
-```± irb
+```
+± irb
 1.9.3p194 :001 > require 'phg_sudoku_solver'
  => true
 1.9.3p194 :002 >
