@@ -34,7 +34,7 @@ Or install it yourself as:
 
 The following snipit illustrates show to use this gem (taken from tests, mind you.)
 
-'''± irb
+```± irb
 1.9.3p194 :001 > require 'phg_sudoku_solver'
  => true
 1.9.3p194 :002 >
@@ -61,14 +61,14 @@ x.dump_known_cells_str
           8   3   9 |   2   7   1 |   4   6   5 \\n
           1   6   4 |   9   5   3 |   8   2   7 \\n
           7   5   2 |   6   8   4 |   1   9   3 \\n"
-'''
+```
         (Note:  The display has been cleaned up a bit above.)
 
 Notes:
   Create a new Sudoku instance by passing in an array of 9 strings.  Each string needs to be 9 characters.  Any non-
   numeric character (1-9) is considered to be an unsolved cell.  You can use spaces, Xs or whatever you like.
 
-  Call the '.solve' method on the sudoku instance that you create.
+  Call the `.solve` method on the sudoku instance that you create.
 
   To get the results of the solved sudoku, you can
   1)  Call the '.dump_known_cells_str' method, which will return a formatted string that represents the solved puzzle.
@@ -79,7 +79,7 @@ Notes:
 
   1.  If the sudoku entered is invalid, the solve method will return an error.
 
- '''1.9.3p194 :015 > a = ['123123123']
+```1.9.3p194 :015 > a = ['123123123']
   => ["123123123"]
  1.9.3p194 :016 > s = Sudoku.new(a)
  Exception: Sudoku entered appears to be invalid.
@@ -87,11 +87,11 @@ Notes:
  	from (irb):16:in `new'
  	from (irb):16
  	from /Users/miles_r_porter/.rvm/rubies/ruby-1.9.3-p194/bin/irb:16:in `<main>'
- 1.9.3p194 :017 >'''
+ 1.9.3p194 :017 >```
 
   2.  Some sudoku are just to complex for the engine to compute a solution in the given maximum iterations
 
-  '''1.9.3p194 :018 >   a = ["123456789","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx"]
+  ```1.9.3p194 :018 >   a = ["123456789","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx","xxxxxxxxx"]
    => ["123456789", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx", "xxxxxxxxx"]
   1.9.3p194 :019 > s = Sudoku.new(a)
 
@@ -100,14 +100,14 @@ Notes:
   1.9.3p194 :020 > x = s.solve()
 
   1.9.3p194 :012 > x = s.solve
-  Exception: Solution taking too long!\n\n'''
+  Exception: Solution taking too long!\n\n```
 
   Note:  The number of iterations are checked after each recursion, so there total iterations may exceed the max
   iterations set.
 
   Oh...  and you can set the max iterations:
 
-  's.set_max_iterations(500)'
+  `s.set_max_iterations(500)`
 
   for example.
 
