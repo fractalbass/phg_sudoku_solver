@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="130158c1-54de-4345-a608-9c01433a4631" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/phg_sudoku_solver.rb" afterPath="$PROJECT_DIR$/lib/phg_sudoku_solver.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/sudoku_test.rb" afterPath="$PROJECT_DIR$/test/sudoku_test.rb" />
     </list>
     <ignored path="phg_sudoku_solver.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -125,7 +123,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="0" selection-start="4639" selection-end="4639" vertical-scroll-proportion="0.7621951">
+            <state line="113" column="46" selection-start="4655" selection-end="4655" vertical-scroll-proportion="0.9634146">
               <folding />
             </state>
           </provider>
@@ -702,7 +700,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="0" selection-start="4639" selection-end="4639" vertical-scroll-proportion="0.7621951">
+        <state line="113" column="46" selection-start="4655" selection-end="4655" vertical-scroll-proportion="0.9634146">
           <folding />
         </state>
       </provider>
