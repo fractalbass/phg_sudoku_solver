@@ -111,7 +111,7 @@ iterations set.  You can set the max iterations like this:
 
 I have created a sample app running on Heroku (that includes a link to source code) that uses the gem...
 
-[Sample App Running On Heroku](http://serene-brook-6810.heroku.com/)
+[Sample App Running On Heroku](https://sudoku-solver-2.herokuapp.com/)
 
 More features will be released at some point.  Enjoy!
 
