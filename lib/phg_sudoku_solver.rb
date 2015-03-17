@@ -83,11 +83,13 @@ class Sudoku
   def solve
     iteration=0
     no_progress_count = 0
+    print_debug 'Max Iterations = %s' %  @max_iterations
 
     while @solved_cell_count!=81
       iteration+=1
       @total_iterations+=1
       print_debug 'Iteration: %s   SolvedCells: %s\n' % [iteration, @solved_cell_count]
+      puts dump_known_cells_str
       compute_possible_values()
 
       begin
@@ -311,24 +313,26 @@ class Sudoku
 
   def recurse
     recurse = copy()
-    (0..8).each { |r|
-      (0..8).each { |c|
-        if (recurse.get_fixed_value(r, c)<=0) and (recurse.get_possible_values(r, c).count>0)
-          (0..recurse.get_possible_values(r, c).count).each { |j|
-            unless recurse.get_possible_values(r, c)[j].nil?
-              print_debug '\nStarting recursion with (%s,%s) set to %s\n' % [r, c, recurse.get_possible_values(r, c)[j]]
-              recurse.set_fixed_value(r, c, recurse.get_possible_values(r, c)[j])
-              print_debug('Recursion starting...')
-              recurse, iterations = recurse.solve
-              @total_iterations = @total_iterations + iterations
-              if recurse!=nil
-                return recurse
-              else
-                recurse = copy()
+    (2..8).each { |guesses|
+      (0..8).each { |r|
+        (0..8).each { |c|
+          if (recurse.get_possible_values(r, c).count==guesses)  #Staring with cells that have the fewest to solve.
+            (0..recurse.get_possible_values(r, c).count).each { |j|
+              unless recurse.get_possible_values(r, c)[j].nil?
+                print_debug '\nStarting recursion with (%s,%s) set to %s\n' % [r, c, recurse.get_possible_values(r, c)[j]]
+                recurse.set_fixed_value(r, c, recurse.get_possible_values(r, c)[j])
+                print_debug('Recursion starting...')
+                recurse, iterations = recurse.solve
+                @total_iterations = @total_iterations + iterations
+                if recurse!=nil
+                  return recurse
+                else
+                  recurse = copy()
+                end
               end
-            end
-          }
-        end
+            }
+          end
+        }
       }
     }
     print_debug('Dead end found.\n')
@@ -483,7 +487,7 @@ class Sudoku
 
   def print_debug(message)
     if @debug
-      print message
+      puts message + '\n'
     end
   end
 

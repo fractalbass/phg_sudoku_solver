@@ -19,7 +19,7 @@ class PhgSudokuSolverTest < Test::Unit::TestCase
 
   # Cell initialize
   def test_initialize_sudoku
-    a = ["5xx4x67xx",
+    a =  ["5xx4x67xx",
           "xxx5xx9xx",
           "2xxx17x4x",
           "xxx72xx1x",
@@ -386,22 +386,41 @@ class PhgSudokuSolverTest < Test::Unit::TestCase
   end
 
   def test_too_long_solve
-    a = [ "123 789 456",
-          "456 123 789",
-          "789 456 123",
+    a = [ "123789456",
+          "456123789",
+          "789456123",
 
-          "xxx xxx xxx",
-          "xxx xxx xxx",
-          "xxx xxx 231",
+          "xxxxxxxxx",
+          "xxxxxxxxx",
+          "xxxxxx231",
 
-          "xxx xxx xxx",
-          "xxx xxx xxx",
-          "xxx xxx xxx"]
+          "xxxxxxxxx",
+          "xxxxxxxxx",
+          "xxxxxxxxx"]
     s1 = Sudoku.new(a)
-    s1.set_max_iterations(100)
+    s1.set_max_iterations(10)
     self.assert_raise(Exception) {
       s1.solve() }
   end
 
+  def test_solve_super_hard
+    a = [ "xx8xx3xx5",
+          "xxxx4x9xx",
+          "x4x8xx7xx",
+          "xx3x5xx68",
+          "xxx462xxx",
+          "27xx3x4xx",
+          "xx4xx6x2x",
+          "xx1x9xxxx",
+          "8xx3xx6xx"]
+
+    s = Sudoku.new(a)
+    s.set_max_iterations(10000)
+    s.set_debug(true)
+    solved, total_iterations = s.solve()
+    puts "Got to here."
+    puts solved.dump_to_str
+    self.assert(solved.validate_sudoku, "Solved sudoku is invalid!!!")
+  end
 
 end
